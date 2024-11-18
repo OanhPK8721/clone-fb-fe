@@ -10,6 +10,7 @@ const { useBreakpoint } = Grid;
 const { Text, Title, Link } = Typography;
 
 export default function SignUpPage() {
+  // Tương tự LoginPage
   const { token } = useToken();
   const screens = useBreakpoint();
   const getUseRegister = useRegister();

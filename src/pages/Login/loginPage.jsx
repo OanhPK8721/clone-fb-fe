@@ -10,6 +10,11 @@ const { useBreakpoint } = Grid;
 
 export default function LoginPage() {
   const { token } = useToken();
+  // Mẫu đúng
+  // const [username, setUsername] = useState('');
+  // const [password, setPassword] = useState('');
+  // const [isLoading, setIsLoading] = useState(false);
+
   const screens = useBreakpoint();
   const {
     setUsername,
@@ -18,6 +23,7 @@ export default function LoginPage() {
   } = useLogin();
 
   const onFinish = async (values) => {
+    // setIsLoading(true);
     const res =  await handleLogin({
       username: values.email,
       password: values.password
@@ -27,6 +33,7 @@ export default function LoginPage() {
       localStorage.setItem("token", res.data.token);
       window.location.href = "/";
     }
+    // setIsLoading(false);
   };
 
   const styles = {
@@ -157,6 +164,7 @@ export default function LoginPage() {
           <Form.Item style={{ marginBottom: "0px" }}>
             <Button block="true" type="primary" htmlType="submit" style={{ backgroundColor: "#0866ff"}} onSubmit={onFinish}>
               Đăng nhập
+              {/* {isLoading ? <Spin indicator={antIcon} /> : "Đăng nhập"} */}
             </Button>
             <div style={styles.footer}>
               <Text style={styles.text}>Chưa có tài khoản?</Text>{" "}

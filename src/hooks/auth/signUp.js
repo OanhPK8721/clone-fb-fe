@@ -1,6 +1,9 @@
 import { useState } from 'react';
 import { AuthenticateService } from '../../services/authen';
 const useRegister = () => {
+  // Tương tự như useLogin, không cần quản lý state ở đây
+  // chuyển sang folder src/api/authen.js
+
   const [name, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [email, setEmail] = useState('');
